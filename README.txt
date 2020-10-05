@@ -1,5 +1,7 @@
-B Tech. Project(BTP)
+B Tech. Project(BTP) IIT Guwahati
+Branch : Engineering Physics
 Area : Photonics
+Guiding Professor : Prof. Ashwini Kumar Sharma
 Period : 21/9/2020 - Ongoing
 
 Goal: 
