@@ -8,3 +8,4 @@ Goal:
 To define
 1. Surface Plasmonic Resonance(SPR) 
 2. Lossy Mode Resonance(LMR)
+using MATLAB simulations.
