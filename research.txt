@@ -1,4 +1,6 @@
 Transfer Matrix Method(TMM):
+Scattering matrix
+
 Redheffer matrix
 Dirichlet convolution
 Convolved divisor sum
