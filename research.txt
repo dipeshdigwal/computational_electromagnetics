@@ -3,4 +3,21 @@ Scattering matrix
 
 Redheffer matrix
 Dirichlet convolution
-Convolved divisor sum
+Convolved divisor sumRigorous Coupled wave analysis(RCWA)
+Optical scatterometry measurements rely on fitting some theoretical model to the measured data. Rigorous coupled wave analysis (RCWA) has emerged as the predominant model used for optical scatterometry measurements on periodic structures. 
+Rigourous Electromagnetic modeling techniques
+Methods for rigorously solving Maxwell’s equations in optical system can, in general, be divided into two categories . 
+1.One set of methods uses Maxwell’s equations to calculate the fields at discrete points in the spatial domain, while the 
+2.other set in some way calculates the properties of the fields in the spatial frequency domain 
+In the former, the field is propagated through the system by solving Maxwell’s equations at each point, given the solutions at nearby points. These methods include finite element methods (FEM) and the Finite Difference Time Domain (FDTD) and Finite Difference Frequency Domain (FDFD) methods 
+In 2nd category methods involved are Transfer matrix method(T matrix) , the Scattering Matrix(S- matrix) method, Rigourous Coupled Wave Analysis(RCWA),Plane Wave Expansion (PWE) method.
+
+RCWA is a computational method used to relate the spatial frequencies (Fourier components) of reflected and transmitted fields to the incident field by calculating the coupling strengths between incident and reflected fields in a material with a periodically perturbed permittivity profile and matching the boundary conditions at the interfaces. 
+With Homogenous thin films, the incident, and diffracted fields can be related to each other using a transfer matrix (T) 
+
+where a0      are the Rayleigh coefficients for the forward propagating (and/or evanescent)incident waves, b0 are the Rayleigh coefficients for the backward propagating (and/or evanescent) diffracted waves in the incident medium (the “reflected” diffraction orders), aN is a vector representing the Rayleigh coefficients for the forward propagating (transmitted) diffraction orders, and bN is a vector representing the Rayleigh coefficients for the backward propagating orders in the transmitted medium (this term is usually considered to be zero). Unfortunately, this formulation of the problem is susceptible to numerical instabilities due to exponentially growing terms in the propagation matrices for optically thick gratings . This problem was solved by rearranging the terms in (3.23) so 
+that the incident components of the field (a0 and bN ) are related to the reflected and transmitted components(aN and b0)through a scattering matrix(S) 
+
+
+
+
