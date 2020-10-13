@@ -1,3 +1,6 @@
+TMM: classical transfer matrix method applicable for analyzing the propagation of light through uniform, finite thickness layers
+Plane Wave Expansion Method: essentially solves Maxwell's equations in k-space.
+RCWA: a synthesis of TMM and PWEM to analyze the transmission of light through layered structures with periodic patterning
 Transfer Matrix Method(TMM):
 Scattering matrix
 
