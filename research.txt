@@ -24,7 +24,7 @@ that the incident components of the field (a0 and bN ) are related to the reflec
 
 
 
-Useful Website
+Surface plasmon resonance (SPR) is the resonant oscillation of conduction electrons at the interface between negative and positive permittivity material stimulated by incident lightUseful Website
 
 Simulation
 https://www.photond.com/products/omnisim.htm
