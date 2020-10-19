@@ -24,3 +24,7 @@ that the incident components of the field (a0 and bN ) are related to the reflec
 
 
 
+Useful Website
+
+Simulation
+https://www.photond.com/products/omnisim.htm
