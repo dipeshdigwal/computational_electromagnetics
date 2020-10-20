@@ -24,7 +24,12 @@ that the incident components of the field (a0 and bN ) are related to the reflec
 
 
 
-Surface plasmon resonance (SPR) is the resonant oscillation of conduction electrons at the interface between negative and positive permittivity material stimulated by incident lightUseful Website
+Surface plasmon resonance (SPR) is the resonant oscillation of conduction electrons at the interface between negative and positive permittivity material stimulated by incident light
+
+Drude Model
+The Drude model of electrical conduction was proposed in 1900[1][2] by Paul Drude to explain the transport properties of electrons in materials (especially metals). The model, which is an application of kinetic theory, assumes that the microscopic behaviour of electrons in a solid may be treated classically and looks much like a pinball machine, with a sea of constantly jittering electrons bouncing and re-bouncing off heavier, relatively immobile positive ions.Useful Website
 
 Simulation
 https://www.photond.com/products/omnisim.htm
+
+https://en.wikipedia.org/wiki/Drude_model
