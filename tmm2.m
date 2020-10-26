@@ -9,7 +9,8 @@
 close all; 
 clc; 
 clear all; 
- 
+addpath('./LD');
+
 % UNITS 
 degrees = pi/180; 
  
@@ -18,7 +19,7 @@ degrees = pi/180;
 %------------------------------------------------------------------------ 
  
 % SOURCE PARAMETERS 
-lam0=(100:1:130)*1e-9;%free space wavelength 
+lam0=linspace(0.2e-6,0.9e-6,10);%free space wavelength 
 k0=(2*pi)./lam0;
 theta = 17 * degrees; %elevation angle 
 phi = 12 * degrees; %azimuthal angle 
@@ -26,18 +27,21 @@ pte = 1/sqrt(2); %amplitude of TE polarization
 ptm = 1i*pte; %amplitude of TM polarization 
 ni=1.0; % incident medium refractive index
 
+er2_list=LD(lam0,'Ag','LD');
+for ind=1:length(er2_list)
+    
 % EXTERNAL MATERIALS 
-ur1 = 1.0; % permeability in the reflection region 
-er1 = 1.0; % permittivity in the reflection region 
+ur1 = 1.0; % permeability(mu) in the reflection region 
+er1 = 1.0; % permittivity(epsilon) in the reflection region 
 ur2 = 1.0; % permeability in the transmission region 
-er2 = 5.0; % permittivity in the transmission region 
+er2 = er2_list(ind); % permittivity in the transmission region 
  
 % DEFINE LAYERS 
-N=10; % number of layers
+N=1; % number of layers
 UR = [ 1 1 1 1 1 1 1 1 1 1]; % array of permeabilities in each layer 
-ER = [ 3 1 2 2 1 3 1 4 2 3 ]; % array of permittivities in each layer 
+ER = [ er2_list(ind) 1 1 2 1 3 1 4 2 3 ]; % array of permittivities in each layer 
 % array of the %thickness of each layer 
-L = [ 0.25 0.5 0.2 0.3 0.25 0.1 0.1 0.1 0.1 0.1].*1e-6; 
+L = [ 0.25 0.5 0.2 0.3 0.25 0.1 0.1 0.1 0.1 0.1].*1e-8; 
  
 %------------------------------------------------------------------------ 
 % IMPLEMENT TRANSFER MATRIX METHOD 
@@ -218,17 +222,31 @@ end
     Tx(q)=abs(T);
     Rx(q)=abs(R);
     
+    Txx(ind,q)=Tx(q)
+    Rxx(ind,q)=Rx(q)
+    
 end
+
 
 %--------------------------------------------------------------------------
 
 figure(1)
-  plot(lam0,Tx,lam0,Rx,'r','linewidth',2)
-  axis([100e-9 130e-9 -0.05 1.05])
-  xlabel('\lambda','fontsize',14)
-  ylabel('T (in blue) or R (in red)','fontsize',14)
-  title('Transmittance (T) and Reflectance(R)','fontsize',14)
-  fh = figure(1);
-  set(fh, 'color', 'white');
+  subplot(2,2,[1,2]);
+  plot(lam0,Tx);
+  xlabel('wavelength(in m)');
+  ylabel('Transmittance');
+  title('SPR Curve');
+  hold on;
   
-  %------------------------------------------------------------------------
+  subplot(2,2,3);
+  plot(lam0,real(er2_list));
+  xlabel('wavelength(in m)');
+  ylabel('real part of epsilon');
+  
+  subplot(2,2,4);
+  plot(lam0,imag(er2_list));
+  xlabel('wavelength(in m)');
+  ylabel('imaginary part of epsilon');
+%------------------------------------------------------------------------
+end
+hold off;
