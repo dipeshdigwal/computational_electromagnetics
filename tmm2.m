@@ -19,29 +19,29 @@ degrees = pi/180;
 %------------------------------------------------------------------------ 
  
 % SOURCE PARAMETERS 
-lam0=linspace(0.2e-6,0.9e-6,10);%free space wavelength 
+lam0=linspace(0.2e-6,1.2e-6,10);%free space wavelength 
 k0=(2*pi)./lam0;
-theta = 17 * degrees; %elevation angle 
-phi = 12 * degrees; %azimuthal angle 
+theta = 47 * degrees; %elevation angle 
+phi = 0 * degrees; %azimuthal angle 
 pte = 1/sqrt(2); %amplitude of TE polarization 
 ptm = 1i*pte; %amplitude of TM polarization 
-ni=1.0; % incident medium refractive index
+ni=1.5; %(Here for Pyrex Glass) incident medium refractive index
 
 er2_list=LD(lam0,'Ag','LD');
 for ind=1:length(er2_list)
     
 % EXTERNAL MATERIALS 
-ur1 = 1.0; % permeability(mu) in the reflection region 
-er1 = 1.0; % permittivity(epsilon) in the reflection region 
+ur1 = 5.0; % (Assumed value for pyrex glass)permeability(mu) in the reflection region 
+er1 = 4.7; % permittivity(epsilon) in the reflection region 
 ur2 = 1.0; % permeability in the transmission region 
-er2 = er2_list(ind); % permittivity in the transmission region 
+er2 = 1.0; % permittivity in the transmission region 
  
 % DEFINE LAYERS 
 N=1; % number of layers
 UR = [ 1 1 1 1 1 1 1 1 1 1]; % array of permeabilities in each layer 
 ER = [ er2_list(ind) 1 1 2 1 3 1 4 2 3 ]; % array of permittivities in each layer 
 % array of the %thickness of each layer 
-L = [ 0.25 0.5 0.2 0.3 0.25 0.1 0.1 0.1 0.1 0.1].*1e-8; 
+L = [ 0.06 0.5 0.2 0.3 0.25 0.1 0.1 0.1 0.1 0.1].*1e-8; 
  
 %------------------------------------------------------------------------ 
 % IMPLEMENT TRANSFER MATRIX METHOD 
@@ -222,8 +222,8 @@ end
     Tx(q)=abs(T);
     Rx(q)=abs(R);
     
-    Txx(ind,q)=Tx(q)
-    Rxx(ind,q)=Rx(q)
+    Txx(ind,q)=Tx(q);
+    Rxx(ind,q)=Rx(q);
     
 end
 
@@ -232,9 +232,9 @@ end
 
 figure(1)
   subplot(2,2,[1,2]);
-  plot(lam0,Tx);
+  plot(lam0,Rx);
   xlabel('wavelength(in m)');
-  ylabel('Transmittance');
+  ylabel('Reflactance');
   title('SPR Curve');
   hold on;
   

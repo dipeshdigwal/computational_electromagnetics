@@ -25,11 +25,24 @@ that the incident components of the field (a0 and bN ) are related to the reflec
 
 
 Surface plasmon resonance (SPR) is the resonant oscillation of conduction electrons at the interface between negative and positive permittivity material stimulated by incident light
+In the Otto configuration, the light illuminates the wall of a glass block, typically a prism, and is totally internally reflected. A thin metal film (for example gold) is positioned close enough to the prism wall so that an evanescent wave can interact with the plasma waves on the surface and hence excite the plasmons.[5]
+
+In the Kretschmann configuration (also known as Kretschmann-Raether configuration), the metal film is evaporated onto the glass block. The light again illuminates the glass block, and an evanescent wave penetrates through the metal film. The plasmons are excited at the outer side of the film. This configuration is used in most practical applications.[5]
+
 
 Drude Model
-The Drude model of electrical conduction was proposed in 1900[1][2] by Paul Drude to explain the transport properties of electrons in materials (especially metals). The model, which is an application of kinetic theory, assumes that the microscopic behaviour of electrons in a solid may be treated classically and looks much like a pinball machine, with a sea of constantly jittering electrons bouncing and re-bouncing off heavier, relatively immobile positive ions.Useful Website
+The Drude model of electrical conduction was proposed in 1900[1][2] by Paul Drude to explain the transport properties of electrons in materials (especially metals). The model, which is an application of kinetic theory, assumes that the microscopic behaviour of electrons in a solid may be treated classically and looks much like a pinball machine, with a sea of constantly jittering electrons bouncing and re-bouncing off heavier, relatively immobile positive ions.Goals:
+To find TIR angle for glass for certain incident light
+Search for the theoretical value of permeability of pyrex glass
+Vary values of theta,length and lambda to get there dependence on SPR data.Useful Website
 
 Simulation
 https://www.photond.com/products/omnisim.htm
 
 https://en.wikipedia.org/wiki/Drude_model
+
+https://www.researchgate.net/post/What_is_reliable_and_simple_source_website_to_find_the_drude-lorentz_parameters_that_needed_to_generate_Complex_refractive_indices_data
+
+https://www.youtube.com/channel/UCPC6uCfBVSK71MnPPcp8AGA
+
+https://www.sprpages.nl/spr-overview/configurations
