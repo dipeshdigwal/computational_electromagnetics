@@ -19,17 +19,18 @@ degrees = pi/180;
 %------------------------------------------------------------------------ 
  
 % SOURCE PARAMETERS 
-lam0=linspace(0.2e-6,1.2e-6,10);%free space wavelength 
+lam0=linspace(0.5e-6,5e-6,10);%free space wavelength 
 k0=(2*pi)./lam0;
-theta = 47 * degrees; %elevation angle 
+theta = 82 * degrees; %elevation angle 
 phi = 0 * degrees; %azimuthal angle 
 pte = 1/sqrt(2); %amplitude of TE polarization 
-ptm = 1i*pte; %amplitude of TM polarization 
-ni=1.5; %(Here for Pyrex Glass) incident medium refractive index
+ptm = i*pte; %amplitude of TM polarization 
 
 er2_list=LD(lam0,'Ag','LD');
-for ind=1:length(er2_list)
-    
+for ind=1:1
+
+ni=refractive_index_BK7(lam0(ind)); %(Here for BK7 Glass prism) incident medium refractive index
+
 % EXTERNAL MATERIALS 
 ur1 = 5.0; % (Assumed value for pyrex glass)permeability(mu) in the reflection region 
 er1 = 4.7; % permittivity(epsilon) in the reflection region 
